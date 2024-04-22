@@ -1,0 +1,112 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    transition: all 0.3s ease;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    line-height: 1.6;
+    font-size: 16px;
+    color: #333;
+    background-color: #f4f4f4;
+    padding: 20px;
+}
+
+.container {
+    max-width: 960px;
+    margin: 40px auto;
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+}
+
+header {
+    background: #9d2235; /* Razorback red background */
+    color: #ffffff; /* White text for all content in header */
+    padding: 20px 40px;
+    text-align: center;
+    font-size: 24px;
+}
+
+header a {
+    color: #ffffff; /* White for links */
+    text-decoration: none;
+    font-weight: bold;
+}
+
+h1 {
+    text-transform: uppercase;
+    color: #eeeeee;
+}
+
+h2, h3 {
+    text-transform: uppercase;
+    color: #333;
+}
+
+h1, h2 {
+    margin-bottom: 10px;
+}
+
+h3 {
+    color: #9d2235; /* Razorback red for job titles */
+    margin-top: 20px;
+}
+
+.date {
+    color: #666;
+    font-size: 14px;
+    margin-bottom: 5px;
+}
+
+section {
+    padding: 40px;
+    border-bottom: 2px solid #eeeeee;
+}
+
+section:last-of-type {
+    border-bottom: none;
+}
+
+ul {
+    list-style-type: none;
+    margin: 20px 0;
+}
+
+ul li {
+    background-color: #e8eaf6; /* Light grey background for items */
+    margin-bottom: 10px;
+    padding: 15px;
+    border-left: 5px solid #9d2235; /* Razorback red border on the left */
+    font-size: 16px;
+}
+
+.detail-info ul li {
+    background-color: transparent;
+    border-left: none;
+    padding-left: 0;
+    font-size: 14px;
+    color: #666;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .container {
+        width: calc(100% - 20px);
+        margin: 20px;
+    }
+
+    header, section {
+        padding: 20px;
+    }
+}
+
+/* Link hover effects */
+a:hover {
+    color: #dddddd; /* Light gray color on hover */
+    text-decoration: underline;
+}
