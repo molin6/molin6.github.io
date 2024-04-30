@@ -4,6 +4,25 @@
     <meta charset="UTF-8">
     <title>Isaiah Molina's Resume</title>
     <link rel="stylesheet" href="static/style.css">
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            var tabs = document.querySelectorAll('.tab-link');
+            tabs.forEach(function(tab) {
+                tab.addEventListener('click', function() {
+                    var tabId = this.getAttribute('data-tab');
+                    document.querySelectorAll('.tab-content').forEach(function(content) {
+                        content.classList.remove('active');
+                    });
+                    document.querySelectorAll('.tab-link').forEach(function(tab) {
+                        tab.classList.remove('active');
+                    });
+                    document.getElementById(tabId).classList.add('active');
+                    this.classList.add('active');
+                });
+            });
+        });
+        </script>
+        
 </head>
 <body>
     <div class="container">
@@ -11,55 +30,152 @@
             <h1>Isaiah Molina</h1>
             <p><a href="https://linkedin.com/in/isaiahmolina">LinkedIn</a> • <a href="https://github.com/molin6">GitHub</a></p>
         </header>
-        
-        <section>
-            <h2>Education</h2>
-            <h3>University of Arkansas | Sam M. Walton College of Business</h3>
-            <ul>
-                <li>Master of Information Systems - IT Management, Expected May 2024</li>
-                <li>Bachelor of Science in Business Administration - Information Systems Blockchain Enterprise Concentration, May 2023</li>
-            </ul>
-        </section>
-        
-        <section>
-            <h2>Experience</h2>
-            <div class="detail-item">
-                <h3>University of Arkansas | Teaching Assistant</h3>
-                <p class="date">May 2023 - Present</p>
-                <ul>
-                    <li>Actively tutored an average of 30 students weekly in Microsoft Office essentials, developing and overseeing assignments to elevate their proficiency with crucial software tools.</li>
-                    <li>Transitioned to a focus on cloud infrastructure, leading the development of a web application using Django and PostgreSQL to introduce full-stack development and database management concepts.</li>
-                    <li>Designed and implemented assignments for deploying the web application on Microsoft Azure VM and utilizing Web App and Database services with GitHub Actions, advancing students' skills in cloud deployment and CI/CD pipelines.</li>
-                </ul>
-            </div>
-            <div class="detail-item">
-                <h3>Assurant | Data & Controls Intern</h3>
-                <p class="date">March 2023 - May 2023</p>
-                <ul>
-                    <li>Built a comprehensive SharePoint website to host control metrics and facilitate project request submissions to enhance both workflow efficiency and data security.</li>
-                    <li>Leveraged SQL queries on MS SQL Server for data exploration and analysis to gather necessary data for dashboard creation.</li>
-                    <li>Crafted Power BI dashboards providing real-time insights into control health, YoY growth, and trends across systems, clients, regions, and business lines directly on the SharePoint platform.</li>
-                </ul>
-            </div>
-            <div class="detail-item">
-                <h3>Simmons Foods | Full Stack Intern</h3>
-                <p class="date">June 2022 - December 2022</p>
-                <ul>
-                    <li>Developed a web application using Python, Django, HTML, CSS, and JavaScript to track employee records, enhancing accessibility for HR and legal proceedings.</li>
-                    <li>Transformed paper-based training forms to a digital format within the application, eliminating physical forms across 8 facilities and 70+ distinct job positions.</li>
-                    <li>Integrated an automated feature that assigns position-specific training forms to newly hired employees, allows online completion of forms, and tracks their hours. This contributed significantly to the overall timesaving of an estimated 50 hours per week.</li>
-                </ul>
-            </div>
-        </section>
 
-        <section>
-            <h2>Technical Skills</h2>
-            <ul>
-                <li>Data Analysis: Power BI, Tableau, SQL, SAS EG, SAS Miner, MSSQL</li>
-                <li>Development: Python, C#, Django, HTML, CSS, JavaScript, GIT</li>
-                <li>Platforms: Microsoft Azure, Linux CLI</li>
-            </ul>
-        </section>
-    </div>
+        <ul class="tabs">
+            <li data-tab="tab-professional" class="tab-link active">Professional</li>
+            <li data-tab="tab-education" class="tab-link">Education</li>
+            <li data-tab="tab-projects" class="tab-link">Projects</li>
+        </ul>
+
+        <!-- Professional Tab -->
+        <div id="tab-professional" class="tab-content active">
+            <section>
+                <h2>Experience</h2>
+                <div class="detail-item">
+                    <h3>University of Arkansas | Teaching Assistant</h3>
+                    <p class="date">May 2023 - Present</p>
+                    <ul>
+                        <li>Actively tutored an average of 30 students weekly in Microsoft Office essentials, developing and overseeing assignments to elevate their proficiency with crucial software tools.</li>
+                        <li>Transitioned to a focus on cloud infrastructure, leading the development of a web application using Django and PostgreSQL to introduce full-stack development and database management concepts.</li>
+                        <li>Designed and implemented assignments for deploying the web application on Microsoft Azure VM and utilizing Web App and Database services with GitHub Actions, advancing students' skills in cloud deployment and CI/CD pipelines.</li>
+                    </ul>
+                </div>
+                <div class="detail-item">
+                    <h3>Assurant | Data & Controls Intern</h3>
+                    <p class="date">March 2023 - May 2023</p>
+                    <ul>
+                        <li>Built a comprehensive SharePoint website to host control metrics and facilitate project request submissions to enhance both workflow efficiency and data security.</li>
+                        <li>Leveraged SQL queries on MS SQL Server for data exploration and analysis to gather necessary data for dashboard creation.</li>
+                        <li>Crafted Power BI dashboards providing real-time insights into control health, YoY growth, and trends across systems, clients, regions, and business lines directly on the SharePoint platform.</li>
+                    </ul>
+                </div>
+                <div class="detail-item">
+                    <h3>Simmons Foods | Full Stack Intern</h3>
+                    <p class="date">June 2022 - December 2022</p>
+                    <ul>
+                        <li>Developed a web application using Python, Django, HTML, CSS, and JavaScript to track employee records, enhancing accessibility for HR and legal proceedings.</li>
+                        <li>Transformed paper-based training forms to a digital format within the application, eliminating physical forms across 8 facilities and 70+ distinct job positions.</li>
+                        <li>Integrated an automated feature that assigns position-specific training forms to newly hired employees, allows online completion of forms, and tracks their hours. This contributed significantly to the overall timesaving of an estimated 50 hours per week.</li>
+                    </ul>
+                </div>
+            </section>
+
+            <section>
+                <h2>Technical Skills</h2>
+                <ul>
+                    <li>Data Analysis: Power BI, Tableau, SQL, SAS EG, SAS Miner, MSSQL</li>
+                    <li>Development: Python, C#, Django, HTML, CSS, JavaScript, GIT</li>
+                    <li>Platforms: Microsoft Azure, Linux CLI</li>
+                </ul>
+            </section>
+            
+
+        </div>
+
+        <!-- Education Tab -->
+        <div id="tab-education" class="tab-content">
+            <!-- Placeholder or additional educational content can go here -->
+            <section>
+                <h2>Education</h2>
+                <h3>University of Arkansas | Sam M. Walton College of Business</h3>
+                <ul>
+                    <li>Master of Information Systems - IT Management, Expected May 2024</li>
+                    <li>Bachelor of Science in Business Administration - Information Systems Blockchain Enterprise Concentration, May 2023</li>
+                </ul>
+                <h2>Key Courses</h2>
+                <div class="course">
+                    <h3>ERP Fundamentals</h3>
+                    <p>This class was an eye-opener on how enterprise resource planning systems stretch across whole organizations, reshaping business processes. We got the lowdown on how crucial it is to nail change management when rolling these systems out.</p>
+                </div>
+                <div class="course">
+                    <h3>Foundations of Digital Innovation</h3>
+                    <p>In this course, we explored ethical frameworks and innovation management, learning how to bring digital ideas from the concept stage to real-world implementation, considering both business impacts and stakeholder effects. It was enlightening to learn directly from innovators and thought leaders.</p>
+                </div>
+                <div class="course">
+                    <h3>Data and Cybersecurity</h3>
+                    <p>This course tackled the essentials of cybersecurity in the business context—everything from securing data, detecting breaches, and understanding the latest in cyber-tech and encryption. We also strategized on compliance and ensuring the ethical use of data.</p>
+                </div>
+                <div class="course">
+                    <h3>Data Analytics Fundamentals</h3>
+                    <p>We got hands-on with data management and analysis, using advanced spreadsheet techniques, SQL databases, and Python programming to understand and utilize data in a business environment.</p>
+                </div>
+                <div class="course">
+                    <h3>Decision Support and Analytics</h3>
+                    <p>This course was all about using analytics to support high-level decision-making. We applied tools to solve problems and make informed decisions based on data pulled from various sources.</p>
+                </div>
+                <div class="course">
+                    <h3>Seminar in Systems Development</h3>
+                    <p>We dived deep into structured systems development, exploring methods to manage complexity in information systems projects. It was all about turning logical specs into physical designs.</p>
+                </div>
+                <div class="course">
+                    <h3>Advanced Data Management</h3>
+                    <p>This course taught us how to build and deploy APIs, with a real project that had us rolling out a fully functional API. It was a practical, hands-on experience in managing data flows and services.</p>
+                </div>
+                <div class="course">
+                    <h3>Modern Infrastructure</h3>
+                    <p>We explored Azure inside and out, learning key cloud concepts and actually deploying solutions in the cloud. It gave us a solid foundation in managing and implementing cloud infrastructure.</p>
+                </div>
+                <div class="course">
+                    <h3>Seminar in Business Intelligence and Knowledge Management</h3>
+                    <p>We delved into business intelligence, using data mining and retrieval techniques to extract actionable knowledge from data, enhancing our decision-making processes and strategic insights.</p>
+                </div>
+                <div class="course">
+                    <h3>Management of Information Technology Seminar</h3>
+                    <p>This seminar focused on the strategic role of IT in transforming organizations. We actively explored how IT is used as a competitive strategy and how it can foster new partnerships and business dynamics.</p>
+                </div>
+            </section>
+            </section>
+        </div>
+
+        <!-- Projects Tab -->
+        <div id="tab-projects" class="tab-content">
+            <section>
+                <h2>Projects</h2>
+                <div class="project">
+                    <h3>Home Sale Price Prediction</h3>
+                    <p>Using Azure Machine Learning, this project predicts home sale prices based on historical data like square footage and year built. The model integrates various features to offer precise price forecasts. <a href="https://github.com/molin6/azureML-housingdata">View on GitHub</a></p>
+                </div>
+                <div class="project">
+                    <h3>Restaurant Web </h3>
+                    <p>A Python and SQL Server-based web app for managing a restaurant's menu and bookings, providing a robust platform for restaurant operations. <a href="https://github.com/molin6/restaurantweb">View on GitHub</a></p>
+                </div>
+                <div class="project">
+                    <h3>JourneyJournal</h3>
+                    <p>A community-driven platform where users share and explore global travel experiences. Features include posting trips, exploring, and connecting with other travelers. <a href="https://github.com/molin6/journeyjournal">View on GitHub</a></p>
+                </div>
+                <div class="project">
+                    <h3>IT-web</h3>
+                    <p>This project supports an IT ticketing system, facilitating efficient department management and ticket tracking. Integrated with an external IT-Ticketing API for enhanced functionality. <a href="https://github.com/molin6/IT-web">View on GitHub</a></p>
+                </div>
+                <div class="project">
+                    <h3>NFT Raffle Platform</h3>
+                    <p>Decentralized raffle platform using Ethereum blockchain for raffling ERC721 NFTs, secured by smart contracts. <a href="https://github.com/hschickdevs/ISYS-4453-NFTRaffle">View on GitHub</a></p>
+                </div>
+                <div class="project">
+                    <h3>School Closings Email Alerts</h3>
+                    <p>An automated system hosted on Azure VM that sends email alerts for school closings, refreshing every 5 minutes. <a href="https://github.com/molin6/ClosureAlerts">View on GitHub</a></p>
+                </div>
+                <div class="project">
+                    <h3>UARK Student Accommodation Platform</h3>
+                    <p>A comprehensive platform to aid University of Arkansas students in finding and managing accommodations. <a href="https://github.com/molin6/student-accommodation">View on GitHub</a></p>
+                </div>
+                <div class="project">
+                    <h3>NLP Survey Insight Extractor</h3>
+                    <p>A toolkit designed to analyze survey results using advanced NLP techniques to extract key themes and sentiments. <a href="https://github.com/molin6/NLPSurveyInsightExtractor">View on GitHub</a></p>
+                </div>
+            </section>
+        </div>
+
 </body>
+
 </html>

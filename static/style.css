@@ -110,3 +110,32 @@ a:hover {
     color: #dddddd; /* Light gray color on hover */
     text-decoration: underline;
 }
+
+.tabs {
+    list-style-type: none;
+    padding: 10px 40px;
+    background-color: #f4f4f4;
+    margin-top: 0;
+    display: flex;
+    justify-content: space-around;
+}
+
+.tab-link {
+    padding: 10px;
+    cursor: pointer;
+    background-color: #eee;
+    border-radius: 5px;
+}
+
+.tab-link.active {
+    background-color: #9d2235;
+    color: white;
+}
+
+.tab-content {
+    display: none;
+}
+
+.tab-content.active {
+    display: block;
+}
